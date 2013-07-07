@@ -1,0 +1,126 @@
+#N canvas 111 136 799 393 12;
+#X obj 48 46 tgl 20 0 empty empty Start! 25 9 1 12 -204800 -1 -1 0
+1;
+#X msg 14 261 \; pd dsp \$1;
+#X obj 14 238 r start;
+#X obj 158 57 vsl 15 100 10 5000 1 0 empty \$0-p1 empty 0 -9 0 10 -262130
+-1 -1 4772 1;
+#X obj 181 57 vsl 15 100 10 5000 1 1 empty \$0-p2 empty 0 -9 0 10 -262130
+-1 -1 6232 1;
+#X obj 205 56 vsl 15 100 0 1 0 0 empty \$0-p3 empty 0 -9 0 10 -261682
+-1 -1 7920 1;
+#X obj 228 57 vsl 15 100 0 2 0 0 empty \$0-p4 empty 0 -9 0 10 -204800
+-1 -1 1485 1;
+#X obj 250 57 vsl 15 100 0 2 0 0 empty \$0-p5 empty 0 -9 0 10 -204800
+-1 -1 1980 1;
+#X obj 48 70 s start;
+#X msg 124 142 6;
+#X obj 172 176 gendyn~;
+#X obj 259 285 freeverb~;
+#X msg 297 75 roomsize \$1;
+#X msg 297 119 damping \$1;
+#X msg 299 162 width \$1;
+#X msg 298 205 wet \$1;
+#X msg 298 248 dry \$1;
+#X obj 301 228 hsl 60 18 0 1 0 1 empty empty dry 2 9 1 12 -225271 -1
+-1 4600 0;
+#X obj 301 185 hsl 60 18 0 1 0 1 empty empty wet 2 9 1 12 -225271 -1
+-1 1700 0;
+#X obj 302 142 hsl 60 18 0 1 0 1 empty empty width 2 9 1 12 -262131
+-1 -1 1100 0;
+#X obj 300 99 hsl 60 18 0 2 0 1 empty empty damping 2 9 1 12 -261689
+-1 -1 1000 0;
+#X obj 300 53 hsl 60 18 0.11 1.1 0 1 empty empty roomsize 2 9 1 12
+-261689 -1 -1 2800 0;
+#X obj 68 142 r start;
+#X obj 258 311 output~;
+#X obj 92 116 loadbang;
+#N canvas 90 210 450 300 control 0;
+#X floatatom 20 -40 3 0 0 0 - - #0-p1;
+#X msg 83 -65 0.8;
+#X msg 150 -65 0.4;
+#X msg 116 -65 0.3;
+#X msg 20 -65 200;
+#X msg 52 -65 500;
+#X obj 20 -92 loadbang;
+#X floatatom 52 -39 3 0 0 0 - - #0-p2;
+#X floatatom 83 -40 3 0 0 0 - - #0-p3;
+#X floatatom 116 -39 3 0 0 0 - - #0-p4;
+#X floatatom 150 -40 3 0 0 0 - - #0-p5;
+#X obj 19 2 ctlin 6;
+#X floatatom 19 51 3 0 0 0 - - #0-p1;
+#X floatatom 173 50 3 0 0 0 - - #0-p2;
+#X obj 173 1 ctlin 13;
+#X floatatom 21 136 3 0 0 0 - - #0-p3;
+#X obj 21 87 ctlin 22;
+#X obj 21 112 expr $f1/127;
+#X floatatom 116 135 3 0 0 0 - - #0-p4;
+#X floatatom 229 132 3 0 0 0 - - #0-p5;
+#X obj 115 86 ctlin 23;
+#X obj 229 83 ctlin 24;
+#X obj 116 111 expr $f1/127*2;
+#X obj 229 108 expr $f1/127*2;
+#X obj 19 27 expr $f1/127*4990+10;
+#X obj 173 26 expr $f1/127*4990+10;
+#X connect 1 0 8 0;
+#X connect 2 0 10 0;
+#X connect 3 0 9 0;
+#X connect 4 0 0 0;
+#X connect 5 0 7 0;
+#X connect 6 0 4 0;
+#X connect 6 0 5 0;
+#X connect 6 0 1 0;
+#X connect 6 0 3 0;
+#X connect 6 0 2 0;
+#X connect 11 0 24 0;
+#X connect 14 0 25 0;
+#X connect 16 0 17 0;
+#X connect 17 0 15 0;
+#X connect 20 0 22 0;
+#X connect 21 0 23 0;
+#X connect 22 0 18 0;
+#X connect 23 0 19 0;
+#X connect 24 0 12 0;
+#X connect 25 0 13 0;
+#X restore 113 278 pd control;
+#X text 155 33 f1;
+#X text 180 33 f2;
+#X text 206 32 a;
+#X text 227 32 p1;
+#X text 251 33 p2;
+#X text 112 255 MIDI Control;
+#X text 294 8 Freeverb params;
+#X text 155 9 Gendyn params;
+#X text 432 247 Gordan Krekovic \, 2013;
+#X text 431 55 This patch is an example how a dynamic stochastic synthesizer
+can be controlled by direect parameter manipulation. Sliders on the
+graphical user interface are connected to the inlets of gendyn~. These
+sliders also receive MIDI controls \, so that they can be managed from
+a MIDI interface with physical sliders or knobs. Audio effects can
+be applied on the pure audio signal synthesized by a dynamic stochastic
+synthesizer. In these examples I added a simple reverb \, which was
+very efficient in making the sound richer and characteristically colored.
+;
+#X connect 0 0 8 0;
+#X connect 2 0 1 0;
+#X connect 3 0 10 2;
+#X connect 4 0 10 3;
+#X connect 5 0 10 4;
+#X connect 6 0 10 5;
+#X connect 7 0 10 6;
+#X connect 9 0 10 1;
+#X connect 10 0 11 0;
+#X connect 11 0 23 0;
+#X connect 11 0 23 1;
+#X connect 12 0 11 0;
+#X connect 13 0 11 0;
+#X connect 14 0 11 0;
+#X connect 15 0 11 0;
+#X connect 16 0 11 0;
+#X connect 17 0 16 0;
+#X connect 18 0 15 0;
+#X connect 19 0 14 0;
+#X connect 20 0 13 0;
+#X connect 21 0 12 0;
+#X connect 22 0 10 0;
+#X connect 24 0 9 0;

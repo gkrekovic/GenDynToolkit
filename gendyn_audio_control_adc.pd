@@ -1,0 +1,65 @@
+#N canvas 470 0 780 374 10;
+#X obj -21 -160 tgl 20 0 empty empty Start! 25 9 1 12 -204800 -1 -1
+0 1;
+#X msg -12 118 \; pd dsp \$1;
+#X obj 261 -126 vsl 25 100 0 0.6 0 0 empty empty Master_volume 28 4
+1 12 -261682 -45076 -86853 3300 1;
+#X obj 188 98 *~;
+#X obj 189 121 dac~ 1 2;
+#X obj -12 95 r start;
+#X obj 261 -171 loadbang;
+#X obj -21 -136 s start;
+#X obj 77 58 freeverb~;
+#X msg 156 -147 roomsize \$1;
+#X msg 157 -104 damping \$1;
+#X msg 155 -58 width \$1;
+#X msg 154 -13 wet \$1;
+#X msg 155 35 dry \$1;
+#X obj 158 15 hsl 60 18 0 1 0 1 empty empty dry 2 9 1 12 -225271 -1
+-1 4500 0;
+#X obj 157 -33 hsl 60 18 0 1 0 1 empty empty wet 2 9 1 12 -225271 -1
+-1 2500 0;
+#X obj 158 -78 hsl 60 18 0 1 0 1 empty empty width 2 9 1 12 -262131
+-1 -1 0 0;
+#X obj 160 -124 hsl 60 18 0 2 0 1 empty empty damping 2 9 1 12 -261689
+-1 -1 0 0;
+#X obj 159 -168 hsl 60 18 0.11 1.1 0 1 empty empty roomsize 2 9 1 12
+-261689 -1 -1 0 0;
+#X obj -19 -48 r start;
+#X msg 261 -150 0.2;
+#X obj -19 -26 audio2gendyn~;
+#X obj 40 -49 adc~;
+#X text 326 108 Gordan Krekovic \, 2013;
+#X text 325 -72 This patch enables controlling the dynamic stochastic
+synthesizer with an audio signal. The purpose of such an approach is
+to reduce the need for manipulating numerical parameters and to allow
+musicians to control a synth by playing a musical instrument \, singing
+\, or experimenting with different sound sources. The algorithm was
+designed to extract relevant audio features from the input signal and
+map them to the synthesis parameters so that the relation between the
+input signal and the synthesized signal is as natural as possible.
+;
+#X text 324 67 This patch requires timbreID to work. Download timbreID
+from: http://puredata.info/downloads/timbreid;
+#X connect 0 0 7 0;
+#X connect 2 0 3 1;
+#X connect 3 0 4 0;
+#X connect 3 0 4 1;
+#X connect 5 0 1 0;
+#X connect 6 0 20 0;
+#X connect 8 0 3 0;
+#X connect 9 0 8 0;
+#X connect 10 0 8 0;
+#X connect 11 0 8 0;
+#X connect 12 0 8 0;
+#X connect 13 0 8 0;
+#X connect 14 0 13 0;
+#X connect 15 0 12 0;
+#X connect 16 0 11 0;
+#X connect 17 0 10 0;
+#X connect 18 0 9 0;
+#X connect 19 0 21 0;
+#X connect 20 0 2 0;
+#X connect 21 0 8 0;
+#X connect 22 0 21 1;
+#X connect 22 1 21 1;

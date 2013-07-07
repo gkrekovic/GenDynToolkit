@@ -1,0 +1,86 @@
+#N canvas 304 129 707 476 12;
+#X obj 17 25 tgl 20 0 empty empty Start! 25 9 1 12 -204800 -1 -1 0
+1;
+#X msg 22 234 \; pd dsp \$1;
+#X obj 22 211 r start;
+#X obj 17 49 s start;
+#X obj 249 252 freeverb~;
+#X msg 263 44 roomsize \$1;
+#X msg 264 87 damping \$1;
+#X msg 262 133 width \$1;
+#X msg 261 178 wet \$1;
+#X msg 262 226 dry \$1;
+#X obj 265 206 hsl 60 18 0 1 0 1 empty empty dry 2 9 1 12 -225271 -1
+-1 4900 0;
+#X obj 264 158 hsl 60 18 0 1 0 1 empty empty wet 2 9 1 12 -225271 -1
+-1 900 0;
+#X obj 265 113 hsl 60 18 0 1 0 1 empty empty width 2 9 1 12 -262131
+-1 -1 2100 0;
+#X obj 267 67 hsl 60 18 0 2 0 1 empty empty damping 2 9 1 12 -261689
+-1 -1 2000 0;
+#X obj 266 23 hsl 60 18 0.11 1.1 0 1 empty empty roomsize 2 9 1 12
+-261689 -1 -1 3600 0;
+#X obj 119 181 r start;
+#X obj 119 206 audio2gendyn~;
+#X msg 121 80 open test.wav;
+#X obj 121 129 readsf~;
+#X obj 486 149 output~;
+#X msg 126 104 start;
+#X msg 175 104 stop;
+#N canvas 97 102 450 300 mix 0;
+#X obj 211 93 inlet;
+#X obj 70 135 *~;
+#X obj 143 135 *~;
+#X obj 211 122 expr 1-$f1;
+#X obj 96 164 +~;
+#X obj 96 192 outlet~;
+#X obj 39 93 r~ \$0-orig;
+#X obj 118 92 r~ \$0-synth;
+#X connect 0 0 1 1;
+#X connect 0 0 3 0;
+#X connect 1 0 4 0;
+#X connect 2 0 4 1;
+#X connect 3 0 2 1;
+#X connect 4 0 5 0;
+#X connect 6 0 1 0;
+#X connect 7 0 2 0;
+#X restore 485 120 pd mix;
+#X obj 488 84 hsl 128 30 0 1 0 0 empty empty empty -2 -8 0 10 -262130
+-1 -1 11700 1;
+#X text 625 85 original;
+#X text 395 87 synthesized;
+#X obj 178 181 r~ \$0-orig;
+#X obj 248 278 s~ \$0-synth;
+#X obj 121 154 s~ \$0-orig;
+#X text 17 366 Gordan Krekovic \, 2013;
+#X text 17 325 This patch requires timbreID to work. Download timbreID
+from: http://puredata.info/downloads/timbreid;
+#X text 49 311 comment;
+#X obj 96 52 t b b;
+#X obj 96 28 r start;
+#X connect 0 0 3 0;
+#X connect 2 0 1 0;
+#X connect 4 0 27 0;
+#X connect 5 0 4 0;
+#X connect 6 0 4 0;
+#X connect 7 0 4 0;
+#X connect 8 0 4 0;
+#X connect 9 0 4 0;
+#X connect 10 0 9 0;
+#X connect 11 0 8 0;
+#X connect 12 0 7 0;
+#X connect 13 0 6 0;
+#X connect 14 0 5 0;
+#X connect 15 0 16 0;
+#X connect 16 0 4 0;
+#X connect 17 0 18 0;
+#X connect 18 0 28 0;
+#X connect 20 0 18 0;
+#X connect 21 0 18 0;
+#X connect 22 0 19 0;
+#X connect 22 0 19 1;
+#X connect 23 0 22 0;
+#X connect 26 0 16 1;
+#X connect 32 0 20 0;
+#X connect 32 1 17 0;
+#X connect 33 0 32 0;

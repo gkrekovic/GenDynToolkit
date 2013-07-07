@@ -1,0 +1,33 @@
+#N canvas 243 125 354 374 10;
+#X obj -223 192 midi2gendyn~;
+#X obj -131 243 freeverb~;
+#X msg -109 36 roomsize \$1;
+#X msg -109 80 damping \$1;
+#X msg -107 123 width \$1;
+#X msg -108 166 wet \$1;
+#X msg -108 209 dry \$1;
+#X obj -105 189 hsl 60 18 0 1 0 1 empty empty dry 2 9 1 12 -225271
+-1 -1 4200 0;
+#X obj -105 146 hsl 60 18 0 1 0 1 empty empty wet 2 9 1 12 -225271
+-1 -1 900 0;
+#X obj -104 103 hsl 60 18 0 1 0 1 empty empty width 2 9 1 12 -262131
+-1 -1 1100 0;
+#X obj -106 60 hsl 60 18 0 2 0 1 empty empty damping 2 9 1 12 -261689
+-1 -1 1000 0;
+#X obj -106 15 hsl 60 18 0.11 1.1 0 1 empty empty roomsize 2 9 1 12
+-261689 -1 -1 2000 0;
+#X obj -132 269 output~;
+#X text -218 350 Gordan Krekovic \, 2013;
+#X connect 0 0 1 0;
+#X connect 1 0 12 0;
+#X connect 1 0 12 1;
+#X connect 2 0 1 0;
+#X connect 3 0 1 0;
+#X connect 4 0 1 0;
+#X connect 5 0 1 0;
+#X connect 6 0 1 0;
+#X connect 7 0 6 0;
+#X connect 8 0 5 0;
+#X connect 9 0 4 0;
+#X connect 10 0 3 0;
+#X connect 11 0 2 0;
