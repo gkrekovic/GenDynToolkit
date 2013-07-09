@@ -8,7 +8,7 @@ This is a comprehensive toolkit for controlling the dynamic stochastic synthesiz
 Other conceptual and technical details can be found in this publication: <br>
 * Gordan Kreković, Davor Petrinović, "A Versatile Toolkit for Controlling Dynamic Stochastic Synthesis", Sound and Music Computing Conference, 2013.
 
-Video example
--------------
+Video Examples
+--------------
 Demonstration of the toolkit and highlights from the experiments mentioned in the paper are shown in the following
 [video](http://www.youtube.com/watch?v=1Uk6KeglvnI).
