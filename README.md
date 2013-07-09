@@ -10,4 +10,5 @@ Other conceptual and technical details can be found in this publication: <br>
 
 Video example
 -------------
-[Watch the video](http://www.youtube.com/watch?v=1Uk6KeglvnI)
+Demonstration of the toolkit and highlights from the experiments mentioned in the paper are shown in the following
+[video](http://www.youtube.com/watch?v=1Uk6KeglvnI).
