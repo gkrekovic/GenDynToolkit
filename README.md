@@ -37,5 +37,5 @@ Prerequisites
 
 Video Examples
 --------------
-Demonstration of the toolkit and highlights from the experiments mentioned in the paper are shown in the following
-[video](http://www.youtube.com/watch?v=1Uk6KeglvnI).
+[![IMAGE VIDEO](http://img.youtube.com/vi/1Uk6KeglvnI.jpg)](http://www.youtube.com/watch?v=1Uk6KeglvnI)
+
