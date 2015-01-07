@@ -4,8 +4,12 @@ GenDynToolkit
 Introduction
 -------------
 
-This is a comprehensive toolkit for controlling the dynamic stochastic synthesizer. Besides direct parameter control and parameter automation, several original approaches have been devised. First, the toolkit enables controlling the synthesizer with an audio signal. Relevant audio features of an input signal are mapped to the synthesis parameters making the control immediate and intuitive. Second, the toolkit supports MIDI control so that musicians can use standard MIDI interfaces to play the synthesizer. Based on this approach a polyphonic MIDI-controlled synthesizer was implemented and included it in the toolkit along with other examples of controlling the dynamic stochastic synthesizer. The toolkit was developed in the widely used visual programming environment Pure Data.</p>
-Other conceptual and technical details can be found in this publication: <br>
+This is comprehensive toolkit for controlling the sound synthesis process using the dynamic stochastic technique devised by Iannis Xenakis. The package contains the following abstractions:
++ **gendyn~** - a native and straightforward implementation of the basic dynamic stochastic snyhtesis (DSS),
++ **audio2gendyn~** - an algorithm for controlling the synthesizer using an input audio signal. Relevant audio features of an input signal are mapped to the synthesis parameters making the control immediate and intuitive,
++ **midi2gendyn~** - a polyphonic MIDI synthesizer based on DSS. The patch receives MIDI notes, velocities, and other controls, maps them into synthesis parameters, and employs sound units based on **gendyn~** to generate the sound.
+
+Conceptual and technical details can be found in this publication: <br>
 * Gordan Kreković, Davor Petrinović, "A Versatile Toolkit for Controlling Dynamic Stochastic Synthesis", Sound and Music Computing Conference, 2013.
 
 Video Examples
