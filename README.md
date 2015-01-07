@@ -32,10 +32,9 @@ Prerequisites
 --------------
 
 + Pd extended
-+ timbre ID library developed by Wiliam Brent: http://williambrent.conflations.com/pages/research.html (only for patches containing the objects for audio extraction)
++ [timbre ID] (http://williambrent.conflations.com/pages/research.html) library developed by Wiliam Brent (only for patches containing the objects for audio extraction)
 
 
 Video Examples
 --------------
-[![IMAGE VIDEO](http://img.youtube.com/vi/1Uk6KeglvnI/0.jpg)](http://www.youtube.com/watch?v=1Uk6KeglvnI)
-
+[![IMAGE VIDEO](http://img.youtube.com/vi/1Uk6KeglvnI/2.jpg)](http://www.youtube.com/watch?v=1Uk6KeglvnI)
