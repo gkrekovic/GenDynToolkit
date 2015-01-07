@@ -37,5 +37,5 @@ Prerequisites
 
 Video Examples
 --------------
-[![IMAGE VIDEO](http://img.youtube.com/vi/1Uk6KeglvnI.jpg)](http://www.youtube.com/watch?v=1Uk6KeglvnI)
+[![IMAGE VIDEO](http://img.youtube.com/vi/1Uk6KeglvnI/0.jpg)](http://www.youtube.com/watch?v=1Uk6KeglvnI)
 
